@@ -34,5 +34,9 @@ public class CircleCompare {
 
         circles.sort(new RadiusComparator());
         System.out.println("circles = " + circles);
+
+        // Using Lambda expression
+        circles.sort((o1, o2) -> o1.getRadius() - o2.getRadius());
+
     }
 }
