@@ -13,6 +13,10 @@ public class Circle {
         this.y = y;
     }
 
+    public int getRadius() {
+        return radius;
+    }
+
     @Override
     public boolean equals(Object obj){
         if(!(obj instanceof Circle)){
@@ -25,6 +29,15 @@ public class Circle {
     @Override
     public int hashCode(){
         return Objects.hash(radius, x, y);
+    }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "radius=" + radius +
+                ", x=" + x +
+                ", y=" + y +
+                '}';
     }
 
     public static void main(String[] args) {
