@@ -15,15 +15,25 @@ public class GooSearchResult {
         return url;
     }
 
-    public String parseDomain(){
-        int firstIndex = url.indexOf('/') + 1;
-        int lastIndex = url.lastIndexOf('/');
+    public String parseDomainOne() {
+        int firstIndex = url.indexOf('/') + 2;
+        int lastIndex = url.indexOf('/', firstIndex);
 
-        if (firstIndex == -1 || lastIndex == -1 || firstIndex == lastIndex) {
-            return null;
+        if (lastIndex == -1) {
+            return url.substring(firstIndex );
         }
-        return url.substring(firstIndex + 1, lastIndex);
+        return url.substring(firstIndex, lastIndex);
     }
+
+//    public String parseDomainOne(){
+//        int firstIndex = url.indexOf('/') + 1;
+//        int lastIndex = url.lastIndexOf('/');
+//
+//        if (firstIndex == -1 || lastIndex == -1 || firstIndex == lastIndex) {
+//            return null;
+//        }
+//        return url.substring(firstIndex + 1, lastIndex);
+//    }
 
     public String parseDomainTwo() {
         int protocolEndIndex = url.indexOf("://");
@@ -49,18 +59,24 @@ public class GooSearchResult {
         return domain;
     }
 
+    public String parseDomainFour(){
+        String[] str1 = url.split("//");
+        String[] str2 = str1[1].split("/");
+        return String.valueOf(str2[0]);
+    }
+
     public static void main(String[] args) {
         //test.com
-        System.out.println(new GooSearchResult("https://test.com").parseDomain());
+        System.out.println(new GooSearchResult("https://test.com").parseDomainOne());
 
         //apple.in.mars
-        System.out.println(new GooSearchResult("http://apple.in.mars").parseDomain());
+        System.out.println(new GooSearchResult("http://apple.in.mars").parseDomainOne());
 
         //https://rock.festival.com/?q=nearest
-        System.out.println(new GooSearchResult("https://rock.festival.com/?q=nearest").parseDomain());
+        System.out.println(new GooSearchResult("https://rock.festival.com/?q=nearest").parseDomainOne());
 
         //http://mountain.alps.com/resorts
-        System.out.println(new GooSearchResult("https://mountain.alps.com/resorts/").parseDomain());
+        System.out.println(new GooSearchResult("https://mountain.alps.com/resorts/").parseDomainOne());
 
         //test.com
         System.out.println(new GooSearchResult("https://test.com").parseDomainTwo());
@@ -85,6 +101,18 @@ public class GooSearchResult {
 
         //http://mountain.alps.com/resorts
         System.out.println(new GooSearchResult("https://mountain.alps.com/resorts").parseDomainThree());
+
+        //test.com
+        System.out.println(new GooSearchResult("https://test.com").parseDomainFour());
+
+        //apple.in.mars
+        System.out.println(new GooSearchResult("http://apple.in.mars").parseDomainFour());
+
+        //https://rock.festival.com/?q=nearest
+        System.out.println(new GooSearchResult("https://rock.festival.com/?q=nearest").parseDomainFour());
+
+        //http://mountain.alps.com/resorts
+        System.out.println(new GooSearchResult("https://mountain.alps.com/resorts").parseDomainFour());
 
     }
 }
