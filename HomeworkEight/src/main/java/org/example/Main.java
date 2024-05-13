@@ -31,7 +31,7 @@ public class Main {
         System.out.println("parallelogram.getName() = " + parallelogram.getName());
         System.out.println("parallelogram.getPoints() = " + Arrays.toString(parallelogram.getPoints()));
         System.out.println("parallelogram.getNumberOfSides() = " + parallelogram.getNumberOfSides());
-        System.out.println("parallelogram.getAngle() = " + parallelogram.getAngle("POINT1"));
+        System.out.println("parallelogram.getAngle() = " + parallelogram.getAngle("POINT2"));
         parallelogram.getSidesLength();
 
     }

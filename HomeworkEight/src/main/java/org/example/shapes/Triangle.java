@@ -73,7 +73,7 @@ public class Triangle extends Shape {
         double a = Point.getLength(p2, p3);
         double b = Point.getLength(p1, p3);
 
-        System.out.println("Triangle sides: [POINT1 - POINT2] = " + c + ", [POINT2 - POINT3] = " + a + ", [POINT1 - POINT3] = " + b);
+        System.out.println("Triangle sides: [POINT1 - POINT2] = " + String.format("%.2f", c) + ", [POINT2 - POINT3] = " + String.format("%.2f", a) + ", [POINT1 - POINT3] = " + String.format("%.2f", b));
 
     }
 }
