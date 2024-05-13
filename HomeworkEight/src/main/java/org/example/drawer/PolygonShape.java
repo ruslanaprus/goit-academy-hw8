@@ -8,4 +8,8 @@ public interface PolygonShape {
 
     int getNumberOfSides();
 
+    double getAngle();
+
+    void getSidesLength();
+
 }

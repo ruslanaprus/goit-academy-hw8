@@ -11,4 +11,8 @@ public abstract class Shape implements PolygonShape {
 
     public abstract int getNumberOfSides();
 
+    public abstract double getAngle();
+
+    public abstract void getSidesLength();
+
 }

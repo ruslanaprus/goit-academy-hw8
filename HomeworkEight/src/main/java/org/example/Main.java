@@ -13,6 +13,8 @@ public class Main {
         System.out.println("rectangle.getName() = " + rectangle.getName());
         System.out.println("Arrays.toString(rectangle.getPoints()) = " + Arrays.toString(rectangle.getPoints()));
         System.out.println("rectangle.getNumberOfSides() = " + rectangle.getNumberOfSides());
+        System.out.println("rectangle.getAngle() = " + rectangle.getAngle());
+        rectangle.getSidesLength();
 
     }
 }

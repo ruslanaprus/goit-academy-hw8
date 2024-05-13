@@ -2,15 +2,21 @@ package org.example.shapes;
 
 import org.example.drawer.Point;
 
-import javax.swing.plaf.PanelUI;
 import java.util.Arrays;
 
 public class Rectangle extends Shape {
 
     private final String name = "Rectangle";
     private Point[] rectanglePoints = new Point[4];
+    private Point p1;
+    private Point p2;
+    private Point p3;
+    private Point p4;
 
     public Rectangle(int[] coordinates) {
+        if (coordinates.length == 0) {
+            throw new IllegalArgumentException("coordinates must be provided");
+        }
         if (coordinates.length % 2 != 0) {
             throw new IllegalArgumentException("coordinates must be even number");
         }
@@ -19,6 +25,12 @@ public class Rectangle extends Shape {
             int y = coordinates[i + 1];
             rectanglePoints[i / 2] = new Point(x, y);
         }
+
+        p1 = rectanglePoints[0];
+        p2 = rectanglePoints[1];
+        p3 = rectanglePoints[2];
+        p4 = rectanglePoints[3];
+
     }
 
     @Override
@@ -36,5 +48,24 @@ public class Rectangle extends Shape {
         return this.rectanglePoints.length;
     }
 
+    @Override
+    public double getAngle() {
+
+        double angle1 = Math.atan2(p1.y - p2.y, p1.x - p2.x);
+        double angle2 = Math.atan2(p3.y - p2.y, p3.x - p2.x);
+
+        return Math.toDegrees(Math.abs(angle1 - angle2));
+
+    }
+
+    @Override
+    public void getSidesLength() {
+
+        double width = Math.abs(p1.x - p4.x);
+        double hight = Math.abs(p1.y - p2.y);
+
+        System.out.println("Rectangle: width = " + width + ", hight = " + hight);
+
+    }
 
 }
