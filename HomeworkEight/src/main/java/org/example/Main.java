@@ -40,5 +40,17 @@ public class Main {
         System.out.println("inscribed angle of the circle = " + circle.getAngle("inscribed angle"));
         System.out.println("circle.getCircumference() = " + String.format("%.2f", ((Circle) circle).getCircumference()));
 
+        System.out.println("\nPOLYGON INFO\n");
+        Shape pentagon = new Pentagon(new int[]{1, -1, 1, 3, 5, 3, 7, -1, 3, -3});
+        System.out.println("trapezoid.getName() = " + pentagon.getName());
+        System.out.println("trapezoid.getPoints() = " + Arrays.toString(pentagon.getPoints()));
+        System.out.println("trapezoid.getNumberOfSides() = " + pentagon.getNumberOfSides());
+        System.out.println("pentagon.getAngle() = " + pentagon.getAngle("POINT1"));
+        System.out.println("pentagon.getAngle() = " + pentagon.getAngle("POINT2"));
+        System.out.println("pentagon.getAngle() = " + pentagon.getAngle("POINT3"));
+        System.out.println("pentagon.getAngle() = " + pentagon.getAngle("POINT4"));
+        System.out.println("pentagon.getAngle() = " + pentagon.getAngle("POINT5"));
+        pentagon.getSidesLength();
+
     }
 }
