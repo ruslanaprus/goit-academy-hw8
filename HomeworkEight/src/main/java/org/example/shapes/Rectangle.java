@@ -2,6 +2,9 @@ package org.example.shapes;
 
 import org.example.drawer.Point;
 
+import javax.swing.plaf.PanelUI;
+import java.util.Arrays;
+
 public class Rectangle extends Shape {
 
     private final String name = "Rectangle";
@@ -22,5 +25,16 @@ public class Rectangle extends Shape {
     public String getName() {
         return this.name;
     }
+
+    @Override
+    public Point[] getPoints() {
+        return Arrays.copyOf(rectanglePoints, rectanglePoints.length);
+    }
+
+    @Override
+    public int getNumberOfSides() {
+        return this.rectanglePoints.length;
+    }
+
 
 }
