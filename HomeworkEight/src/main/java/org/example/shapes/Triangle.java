@@ -47,8 +47,23 @@ public class Triangle extends Shape {
     }
 
     @Override
-    public double getAngle() {
-        return Point.getAngleAtPoint(p3, p1, p2);
+    public double getAngle(String pointName) {
+        if (pointName.equals("POINT1")) {
+            return Point.getAngleAtPoint(
+                    p1, p2, p3
+            );
+        }
+        if (pointName.equals("POINT2")) {
+            return Point.getAngleAtPoint(
+                    p2, p3, p1
+            );
+        }
+        if (pointName.equals("POINT3")) {
+            return Point.getAngleAtPoint(
+                    p3, p1, p2
+            );
+        }
+        throw new IllegalArgumentException("Unknown point");
     }
 
     @Override
@@ -58,7 +73,7 @@ public class Triangle extends Shape {
         double a = Point.getLength(p2, p3);
         double b = Point.getLength(p1, p3);
 
-        System.out.println("Triangle sides: Point 1-Point 2 = " + c + ", Point 2-Point 3 = " + a + ", Point 1-Point 3 = " + b);
+        System.out.println("Triangle sides: [POINT1 - POINT2] = " + c + ", [POINT2 - POINT3] = " + a + ", [POINT1 - POINT3] = " + b);
 
     }
 }

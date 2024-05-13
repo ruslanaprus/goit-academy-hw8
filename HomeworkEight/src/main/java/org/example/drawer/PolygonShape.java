@@ -8,7 +8,7 @@ public interface PolygonShape {
 
     int getNumberOfSides();
 
-    double getAngle();
+    double getAngle(String str);
 
     void getSidesLength();
 

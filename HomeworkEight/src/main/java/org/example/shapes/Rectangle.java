@@ -49,13 +49,18 @@ public class Rectangle extends Shape {
     }
 
     @Override
-    public double getAngle() {
-
+    public double getAngle(String pointName) {
         double angle1 = Math.atan2(p1.y - p2.y, p1.x - p2.x);
         double angle2 = Math.atan2(p3.y - p2.y, p3.x - p2.x);
-
-        return Math.toDegrees(Math.abs(angle1 - angle2));
-
+        switch (pointName) {
+            case "POINT1":
+            case "POINT2":
+            case "POINT3":
+            case "POINT4":
+                return Math.toDegrees(Math.abs(angle1 - angle2));
+            default:
+                throw new IllegalArgumentException("Unknown point");
+        }
     }
 
     @Override
