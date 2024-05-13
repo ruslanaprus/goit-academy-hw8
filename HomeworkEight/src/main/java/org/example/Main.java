@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.shapes.Rectangle;
 import org.example.shapes.Shape;
+import org.example.shapes.Triangle;
 
 import java.util.Arrays;
 
@@ -15,6 +16,14 @@ public class Main {
         System.out.println("rectangle.getNumberOfSides() = " + rectangle.getNumberOfSides());
         System.out.println("rectangle.getAngle() = " + rectangle.getAngle());
         rectangle.getSidesLength();
+
+        System.out.println("\nTRIANGLE INFO\n");
+        Shape triangle = new Triangle(new int[]{0, 0, 0, 1, 2, 0});
+        System.out.println("triangle.getName() = " + triangle.getName());
+        System.out.println("triangle.getPoints() = " + Arrays.toString(triangle.getPoints()));
+        System.out.println("triangle.getNumberOfSides() = " + triangle.getNumberOfSides());
+        System.out.println("triangle.getAngle() = " + triangle.getAngle());
+        triangle.getSidesLength();
 
     }
 }
