@@ -43,8 +43,8 @@ public class Circle extends Shape {
     }
 
     @Override
-    public double getArea(){
-        return -1;
+    public double getArea() {
+        return Math.PI * Math.pow(getRadius(), 2);
     }
 
     public double getRadius() {

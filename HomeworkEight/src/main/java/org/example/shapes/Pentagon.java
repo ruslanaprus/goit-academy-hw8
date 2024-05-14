@@ -45,8 +45,24 @@ public class Pentagon extends Shape {
     }
 
     @Override
-    public double getArea(){
-        return -1;
+    public double getArea() {
+        double[] sides = getSides();
+
+        // the pentagon is divided into three triangles
+        double area = 0.0;
+        for (int i = 0; i < 3; i++) {
+            // Lengths of sides of triangle
+            double side1 = sides[i];
+            double side2 = sides[(i + 1) % 5]; // Modulo 5 to handle last side wrapping around to the first
+            double side3 = sides[(i + 2) % 5]; // Next side after the previous one
+
+            double s = (side1 + side2 + side3) / 2;
+            double triangleArea = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+
+            area += triangleArea;
+        }
+
+        return area;
     }
 
     @Override

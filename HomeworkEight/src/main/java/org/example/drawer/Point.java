@@ -79,7 +79,7 @@ public class Point {
         double length2 = getLength(point2, point3);
         double length3 = getLength(point1, point3);
 
-        double angleRadians = Math.acos((length1*length1 + length2*length2 - length3*length3) / (2 * length1 * length2));
+        double angleRadians = Math.acos((length1 * length1 + length2 * length2 - length3 * length3) / (2 * length1 * length2));
         DecimalFormat df = new DecimalFormat("#.##");
         return Double.parseDouble(df.format(Math.toDegrees(angleRadians)));
     }

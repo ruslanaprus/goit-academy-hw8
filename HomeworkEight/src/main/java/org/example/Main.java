@@ -17,6 +17,7 @@ public class Main {
         System.out.println("rectangle.getSides() = " + Arrays.toString(rectangle.getSides()));
         rectangle.printSidesLength();
         System.out.println("rectangle.getPerimeter() = " + (rectangle.getPerimeter()));
+        System.out.println("rectangle.getArea() = " + rectangle.getArea());
 
         System.out.println("\nTRIANGLE INFO\n");
         Shape triangle = new Triangle(new int[]{0, 0, 0, 1, 2, 0});
@@ -40,6 +41,7 @@ public class Main {
         System.out.println("parallelogram.getSides() = " + Arrays.toString(parallelogram.getSides()));
         parallelogram.printSidesLength();
         System.out.println("parallelogram.getPerimeter() = " + (parallelogram.getPerimeter()));
+        System.out.println("parallelogram.getArea() = " + parallelogram.getArea());
 
 
         System.out.println("\nCIRCLE INFO\n");
@@ -50,6 +52,7 @@ public class Main {
         System.out.println("central angle of the circle = " + circle.getAngle("central angle"));
         System.out.println("inscribed angle of the circle = " + circle.getAngle("inscribed angle"));
         System.out.println("circle.getCircumference() = " + String.format("%.2f", ((Circle) circle).getCircumference()));
+        System.out.println("circle.getArea() = " + circle.getArea());
 
         System.out.println("\nPENTAGON INFO\n");
         Shape pentagon = new Pentagon(new int[]{1, -1, 1, 3, 5, 3, 7, -1, 3, -3});
@@ -65,6 +68,7 @@ public class Main {
         System.out.println("pentagon.getSides() = " + Arrays.toString(pentagon.getSides()));
         pentagon.printSidesLength();
         System.out.println("pentagon.getPerimeter() = " + (pentagon.getPerimeter()));
+        System.out.println("pentagon.getArea() = " + pentagon.getArea());
 
     }
 }

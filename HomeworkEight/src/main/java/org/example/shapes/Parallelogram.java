@@ -29,8 +29,14 @@ public class Parallelogram extends Shape {
     }
 
     @Override
-    public double getArea(){
-        return -1;
+    public double getArea() {
+        double[] sides = getSides();
+        double[] angles = getAngles();
+
+        // points[0] and points[1] represent the adjacent sides of the parallelogram
+        double angle = Math.toRadians(angles[0]); // Convert angle to radians for trigonometric functions
+
+        return sides[0] * sides[1] * Math.sin(angle);
     }
 
     @Override

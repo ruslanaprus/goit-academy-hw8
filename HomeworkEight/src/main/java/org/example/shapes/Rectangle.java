@@ -29,8 +29,9 @@ public class Rectangle extends Shape {
     }
 
     @Override
-    public double getArea(){
-        return -1;
+    public double getArea() {
+        double[] sides = getSides();
+        return sides[0] * sides[1];
     }
 
     @Override

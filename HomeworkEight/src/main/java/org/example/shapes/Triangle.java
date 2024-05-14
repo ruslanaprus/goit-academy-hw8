@@ -32,15 +32,14 @@ public class Triangle extends Shape {
     }
 
     @Override
-    public double getArea(){
+    public double getArea() {
         double[] sides = getSides();
-        double semiPerimeter = getPerimeter() / 2.0;
 
         // Uses Heron's formula to calculate the area of triangle
-        double area = Math.sqrt(semiPerimeter *
-                (semiPerimeter - sides[0]) *
-                (semiPerimeter - sides[1]) *
-                (semiPerimeter - sides[2]));
+        double area = Math.sqrt(getPerimeter() / 2.0 *
+                (getPerimeter() / 2.0 - sides[0]) *
+                (getPerimeter() / 2.0 - sides[1]) *
+                (getPerimeter() / 2.0 - sides[2]));
         return area;
     }
 
