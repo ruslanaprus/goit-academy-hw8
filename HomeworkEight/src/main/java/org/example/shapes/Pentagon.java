@@ -2,7 +2,7 @@ package org.example.shapes;
 
 import org.example.drawer.Point;
 
-public class Pentagon extends ShapeComposer {
+public class Pentagon extends Shape {
 
     private Point p1 = points[0];
     private Point p2 = points[1];
@@ -42,6 +42,11 @@ public class Pentagon extends ShapeComposer {
             );
         }
         throw new IllegalArgumentException("Unknown point");
+    }
+
+    @Override
+    public double getArea(){
+        return -1;
     }
 
     @Override

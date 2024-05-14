@@ -2,7 +2,7 @@ package org.example.shapes;
 
 import org.example.drawer.Point;
 
-public class Rectangle extends ShapeComposer {
+public class Rectangle extends Shape {
 
     private Point p1 = points[0];
     private Point p2 = points[1];
@@ -26,6 +26,11 @@ public class Rectangle extends ShapeComposer {
             default:
                 throw new IllegalArgumentException("Unknown point");
         }
+    }
+
+    @Override
+    public double getArea(){
+        return -1;
     }
 
     @Override

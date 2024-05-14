@@ -4,12 +4,12 @@ import org.example.drawer.Point;
 
 import java.util.Arrays;
 
-public abstract class ShapeComposer implements org.example.drawer.ShapeComposer {
+public abstract class Shape implements org.example.drawer.ShapeComposer {
 
     protected String name;
     protected Point[] points;
 
-    public ShapeComposer(String name, int[] coordinates) {
+    public Shape(String name, int[] coordinates) {
         if (coordinates.length == 0) {
             throw new IllegalArgumentException("Coordinates must be provided");
         }
@@ -38,7 +38,7 @@ public abstract class ShapeComposer implements org.example.drawer.ShapeComposer 
         return points.length;
     }
 
-    public double[] getAngles(Point[] points) {
+    public double[] getAngles() {
         int numPoints = points.length;
         double[] angles = new double[numPoints];
 
@@ -49,11 +49,33 @@ public abstract class ShapeComposer implements org.example.drawer.ShapeComposer 
             angles[i] = Point.getAngleAtPoint(point1, point2, point3);
         }
 
-        return angles;
+        return Arrays.copyOf(angles, angles.length);
+    }
+
+    public double[] getSides() {
+        int numPoints = points.length;
+        double[] sides = new double[numPoints];
+        for (int i = 0; i < numPoints; i++) {
+            Point point1 = points[i];
+            Point point2 = points[(i + 1) % numPoints];
+            sides[i] = Point.getLength(point1, point2);
+        }
+        return Arrays.copyOf(sides, sides.length);
+    }
+
+    public double getPerimeter() {
+        double[] sides = getSides();
+        double perimeter = 0.0;
+        for (double side : sides) {
+            perimeter += side;
+        }
+        return perimeter;
     }
 
     public abstract double getAngle(String str);
 
     public abstract void printSidesLength();
+
+    public abstract double getArea();
 
 }

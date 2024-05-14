@@ -2,7 +2,7 @@ package org.example.shapes;
 
 import org.example.drawer.Point;
 
-public class Circle extends ShapeComposer {
+public class Circle extends Shape {
 
     private Point p1 = points[0];
     private Point p2 = points[1];
@@ -30,6 +30,21 @@ public class Circle extends ShapeComposer {
     @Override
     public void printSidesLength() {
         throw new UnsupportedOperationException("Circle doesn't have sides");
+    }
+
+    @Override
+    public double[] getSides() {
+        throw new UnsupportedOperationException("Circle doesn't have sides");
+    }
+
+    @Override
+    public double getPerimeter() {
+        throw new UnsupportedOperationException("Calculate circumference");
+    }
+
+    @Override
+    public double getArea(){
+        return -1;
     }
 
     public double getRadius() {

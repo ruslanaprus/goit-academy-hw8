@@ -2,7 +2,7 @@ package org.example.shapes;
 
 import org.example.drawer.Point;
 
-public class Triangle extends ShapeComposer {
+public class Triangle extends Shape {
     Point p1 = points[0];
     Point p2 = points[1];
     Point p3 = points[2];
@@ -29,6 +29,19 @@ public class Triangle extends ShapeComposer {
             );
         }
         throw new IllegalArgumentException("Unknown point");
+    }
+
+    @Override
+    public double getArea(){
+        double[] sides = getSides();
+        double semiPerimeter = getPerimeter() / 2.0;
+
+        // Uses Heron's formula to calculate the area of triangle
+        double area = Math.sqrt(semiPerimeter *
+                (semiPerimeter - sides[0]) *
+                (semiPerimeter - sides[1]) *
+                (semiPerimeter - sides[2]));
+        return area;
     }
 
     @Override

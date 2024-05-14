@@ -12,4 +12,12 @@ public interface ShapeComposer {
 
     void printSidesLength();
 
+    double[] getAngles();
+
+    double[] getSides();
+
+    double getPerimeter();
+
+    double getArea();
+
 }
