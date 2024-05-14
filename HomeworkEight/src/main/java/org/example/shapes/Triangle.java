@@ -2,7 +2,7 @@ package org.example.shapes;
 
 import org.example.drawer.Point;
 
-public class Triangle extends Shape {
+public class Triangle extends ShapeComposer {
     Point p1 = points[0];
     Point p2 = points[1];
     Point p3 = points[2];
@@ -32,7 +32,7 @@ public class Triangle extends Shape {
     }
 
     @Override
-    public void getSidesLength() {
+    public void printSidesLength() {
 
         double c = Point.getLength(p1, p2);
         double a = Point.getLength(p2, p3);

@@ -1,16 +1,15 @@
 package org.example.shapes;
 
 import org.example.drawer.Point;
-import org.example.drawer.PolygonShape;
 
 import java.util.Arrays;
 
-public abstract class Shape implements PolygonShape {
+public abstract class ShapeComposer implements org.example.drawer.ShapeComposer {
 
     protected String name;
     protected Point[] points;
 
-    public Shape(String name, int[] coordinates) {
+    public ShapeComposer(String name, int[] coordinates) {
         if (coordinates.length == 0) {
             throw new IllegalArgumentException("Coordinates must be provided");
         }
@@ -39,8 +38,22 @@ public abstract class Shape implements PolygonShape {
         return points.length;
     }
 
+    public double[] getAngles(Point[] points) {
+        int numPoints = points.length;
+        double[] angles = new double[numPoints];
+
+        for (int i = 0; i < numPoints; i++) {
+            Point point1 = points[i];
+            Point point2 = points[(i + 1) % numPoints];
+            Point point3 = points[(i + 2) % numPoints];
+            angles[i] = Point.getAngleAtPoint(point1, point2, point3);
+        }
+
+        return angles;
+    }
+
     public abstract double getAngle(String str);
 
-    public abstract void getSidesLength();
+    public abstract void printSidesLength();
 
 }

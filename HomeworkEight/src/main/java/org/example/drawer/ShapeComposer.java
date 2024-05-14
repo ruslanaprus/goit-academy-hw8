@@ -1,6 +1,6 @@
 package org.example.drawer;
 
-public interface PolygonShape {
+public interface ShapeComposer {
 
     String getName();
 
@@ -10,6 +10,6 @@ public interface PolygonShape {
 
     double getAngle(String str);
 
-    void getSidesLength();
+    void printSidesLength();
 
 }

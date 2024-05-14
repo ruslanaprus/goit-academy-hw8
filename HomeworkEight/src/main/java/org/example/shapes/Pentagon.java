@@ -2,9 +2,7 @@ package org.example.shapes;
 
 import org.example.drawer.Point;
 
-import java.util.Arrays;
-
-public class Pentagon extends Shape {
+public class Pentagon extends ShapeComposer {
 
     private Point p1 = points[0];
     private Point p2 = points[1];
@@ -20,34 +18,34 @@ public class Pentagon extends Shape {
     public double getAngle(String pointName) {
         if (pointName.equals("POINT1")) {
             return Point.getAngleAtPoint(
-                    p1, p2, p5
+                    p5, p1, p2
             );
         }
         if (pointName.equals("POINT2")) {
             return Point.getAngleAtPoint(
-                    p2, p3, p1
+                    p1, p2, p3
             );
         }
         if (pointName.equals("POINT3")) {
             return Point.getAngleAtPoint(
-                    p3, p4, p2
+                    p2, p3, p4
             );
         }
         if (pointName.equals("POINT4")) {
             return Point.getAngleAtPoint(
-                    p4, p5, p3
+                    p3, p4, p5
             );
         }
         if (pointName.equals("POINT5")) {
             return Point.getAngleAtPoint(
-                    p5, p1, p4
+                    p4, p5, p1
             );
         }
         throw new IllegalArgumentException("Unknown point");
     }
 
     @Override
-    public void getSidesLength() {
+    public void printSidesLength() {
 
         double a = Point.getLength(p1, p2);
         double b = Point.getLength(p2, p3);

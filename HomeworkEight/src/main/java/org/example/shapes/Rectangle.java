@@ -2,7 +2,7 @@ package org.example.shapes;
 
 import org.example.drawer.Point;
 
-public class Rectangle extends Shape {
+public class Rectangle extends ShapeComposer {
 
     private Point p1 = points[0];
     private Point p2 = points[1];
@@ -29,7 +29,7 @@ public class Rectangle extends Shape {
     }
 
     @Override
-    public void getSidesLength() {
+    public void printSidesLength() {
 
         double width = Math.abs(p1.x - p4.x);
         double hight = Math.abs(p1.y - p2.y);

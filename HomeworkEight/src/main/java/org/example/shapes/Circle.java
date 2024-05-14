@@ -2,9 +2,7 @@ package org.example.shapes;
 
 import org.example.drawer.Point;
 
-import java.util.Arrays;
-
-public class Circle extends Shape {
+public class Circle extends ShapeComposer {
 
     private Point p1 = points[0];
     private Point p2 = points[1];
@@ -30,7 +28,7 @@ public class Circle extends Shape {
     }
 
     @Override
-    public void getSidesLength() {
+    public void printSidesLength() {
         throw new UnsupportedOperationException("Circle doesn't have sides");
     }
 
